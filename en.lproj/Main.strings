@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "STOP"; ObjectID = "7RV-nl-5y8"; */
+"7RV-nl-5y8.normalTitle" = "STOP";
+
+/* Class = "UIViewController"; title = "Thank You"; ObjectID = "Alb-E6-1Gf"; */
+"Alb-E6-1Gf.title" = "Thank You";
+
+/* Class = "UIButton"; normalTitle = "GO"; ObjectID = "Mfm-Fe-2Ts"; */
+"Mfm-Fe-2Ts.normalTitle" = "GO";
+
+/* Class = "UITextView"; text = "sparkjam.co.uk"; ObjectID = "QkC-IU-1Rn"; */
+"QkC-IU-1Rn.text" = "sparkjam.co.uk";
+
+/* Class = "UIButton"; normalTitle = "BYE!"; ObjectID = "aRm-rC-M1k"; */
+"aRm-rC-M1k.normalTitle" = "BYE!";
+
+/* Class = "UIViewController"; title = "Play"; ObjectID = "af2-R1-wnZ"; */
+"af2-R1-wnZ.title" = "Play";
+
+/* Class = "UITextView"; text = "v 1.0 built by:"; ObjectID = "ayV-Yk-QNo"; */
+"ayV-Yk-QNo.text" = "v 1.0 built by:";
+
+/* Class = "UIButton"; normalTitle = "PAUSE"; ObjectID = "cN6-Gw-Dxt"; */
+"cN6-Gw-Dxt.normalTitle" = "PAUSE";
+
+/* Class = "UIViewController"; title = "Home"; ObjectID = "oRV-W6-QIx"; */
+"oRV-W6-QIx.title" = "Home";

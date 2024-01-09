@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oRV-W6-QIx">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Black.ttf">
+            <string>Raleway-Black</string>
+        </array>
+        <array key="Spinnaker-Regular.ttf">
+            <string>Spinnaker-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Play-->
+        <scene sceneID="dTt-RO-jAM">
+            <objects>
+                <viewController storyboardIdentifier="KMLViewerViewController" title="Play" id="af2-R1-wnZ" customClass="KMLViewerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A1J-zj-62g"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tbz-Ra-Wi2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ldR-I2-srK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msl-vq-smR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="af2-R1-wnZ" id="xPZ-hc-6lT"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cN6-Gw-Dxt">
+                                <rect key="frame" x="105" y="339" width="110" height="92.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PAUSE" image="button_pause"/>
+                                <connections>
+                                    <action selector="onTogglePressed:" destination="af2-R1-wnZ" eventType="touchUpInside" id="GYj-KU-TQc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RV-nl-5y8">
+                                <rect key="frame" x="130" y="430.5" width="60" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="STOP" image="button_exit"/>
+                                <connections>
+                                    <segue destination="Alb-E6-1Gf" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="HUz-N8-FCL"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pypa" translatesAutoresizingMaskIntoConstraints="NO" id="5nC-3R-rlL">
+                                <rect key="frame" x="21.5" y="28" width="186.5" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wal" translatesAutoresizingMaskIntoConstraints="NO" id="Oas-Qk-qtp">
+                                <rect key="frame" x="21.5" y="208" width="237.5" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="labelOne" destination="5nC-3R-rlL" id="gaS-J2-Gui"/>
+                        <outlet property="labelTwo" destination="Oas-Qk-qtp" id="Vwu-Ff-QkO"/>
+                        <outlet property="map" destination="msl-vq-smR" id="Qhv-Cj-CC0"/>
+                        <outlet property="toggleButton" destination="cN6-Gw-Dxt" id="jpG-OX-zDF"/>
+                        <segue destination="oRV-W6-QIx" kind="presentation" identifier="backUpSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="g5O-Lp-Ypo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="307-Zz-EFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1389.8550724637682" y="626.9021739130435"/>
+        </scene>
+        <!--Thank You-->
+        <scene sceneID="NxS-WA-5Wy">
+            <objects>
+                <viewController storyboardIdentifier="ThankYouViewController" title="Thank You" id="Alb-E6-1Gf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bcN-dJ-cRp"/>
+                        <viewControllerLayoutGuide type="bottom" id="yRw-Ja-aqm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="apY-7b-Ee0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="WGz-64-OVO">
+                                <rect key="frame" x="28" y="111.5" width="264" height="89.5"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Come again and take a different path.
+There are many ways to get lost.
+
+Find out about the people and places that inspired these stories at our website</string>
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Spinnaker-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="leftToRight" tailIndent="468" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRm-rC-M1k">
+                                <rect key="frame" x="106.5" y="338.5" width="104.5" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="BYE!" image="button_back"/>
+                                <connections>
+                                    <segue destination="oRV-W6-QIx" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="YDe-Q9-RSp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" delaysContentTouches="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdd-YT-SD7">
+                                <rect key="frame" x="28" y="206" width="264" height="28"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="letsgetlostapp.com">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="Raleway-Black"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ty" translatesAutoresizingMaskIntoConstraints="NO" id="U0H-ua-Fvs">
+                                <rect key="frame" x="21.5" y="28" width="189.5" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" delaysContentTouches="NO" bouncesZoom="NO" editable="NO" text="sparkjam.co.uk" translatesAutoresizingMaskIntoConstraints="NO" id="QkC-IU-1Rn">
+                                <rect key="frame" x="160" y="448.5" width="160" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Black" family="Raleway" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" delaysContentTouches="NO" bouncesZoom="NO" editable="NO" text="version 1.01" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayV-Yk-QNo">
+                                <rect key="frame" x="0.0" y="448.5" width="160" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Spinnaker-Regular" family="Spinnaker" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="for_now_logo" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-1Z-Wdh">
+                                <rect key="frame" x="28" y="270" width="47.5" height="38"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ace_logo" translatesAutoresizingMaskIntoConstraints="NO" id="RPj-to-WKK">
+                                <rect key="frame" x="116.5" y="270" width="182" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hj6-Uw-tey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102.898550724638" y="622.01086956521749"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="ibI-kU-ecj">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oRV-W6-QIx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="txi-ET-Y8f"/>
+                        <viewControllerLayoutGuide type="bottom" id="BMy-UX-wrX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v5w-ft-ptN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfm-Fe-2Ts">
+                                <rect key="frame" x="105" y="339" width="110" height="92.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GO" image="button_go"/>
+                                <connections>
+                                    <segue destination="af2-R1-wnZ" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="WXy-dg-pym"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" contentMode="center" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="wfe-Dj-lHk" userLabel="7C554BE8-38DF-410E-95EF-E6170B100A30-385-00000822C0AC7FC5">
+                                <rect key="frame" x="21.5" y="126.5" width="277" height="202"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="" identifier="1728ED7A-FBD3-4357-9A07-92014E35B0EA" label="">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Enter the park through any gate, put on your headphones and press go
+Stories will be triggered as you walk, find them or let them find you
+  
+If the story fades, walk back into it, wait and it will continue, or walk on into another
+There's no set route, no wrong or right way to go
+
+Some stories like benches, so if you see one, sit and listen</string>
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Spinnaker-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="leftToRight" tailIndent="468" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lgl" translatesAutoresizingMaskIntoConstraints="NO" id="Yul-TA-SeU">
+                                <rect key="frame" x="21.5" y="28" width="130" height="90.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r9J-qr-gVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718.84057971014499" y="623.64130434782612"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ace_logo" width="225" height="54"/>
+        <image name="button_back" width="142" height="142"/>
+        <image name="button_exit" width="78" height="78"/>
+        <image name="button_go" width="142" height="142"/>
+        <image name="button_pause" width="142" height="142"/>
+        <image name="for_now_logo" width="66" height="44"/>
+        <image name="lgl" width="165" height="139"/>
+        <image name="pypa" width="241" height="207"/>
+        <image name="ty" width="245" height="98"/>
+        <image name="wal" width="307" height="98"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YDe-Q9-RSp"/>
+    </inferredMetricsTieBreakers>
+</document>
